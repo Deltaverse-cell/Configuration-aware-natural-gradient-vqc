@@ -2,32 +2,38 @@
 Code and results for Configuration-Aware Natural Gradient Optimization for Variational Quantum Circuits
 # Configuration-Aware Natural Gradient Optimization for Variational Quantum Circuits
 
-Reproducibility Statement
+This repository provides the implementation and reproducible simulation framework accompanying the study on configuration-aware optimization in variational quantum circuits.
 
-This work presents a controlled simulation study of configuration-aware optimization in variational quantum circuits.
+## Reproducibility Statement
 
-All results reported in the manuscript are generated using a deterministic simulation pipeline implemented in Python.
+The results reported in the manuscript are generated using a controlled and deterministic simulation pipeline implemented in Python. The study investigates optimization under configuration variability, where each admissible circuit realization induces a distinct objective over a shared parameter space.
 
 The implementation includes:
+
 - exact statevector simulation,
 - parameter-shift gradient computation,
-- quantum geometric tensor evaluation,
-- controlled configuration-family construction,
-- fixed random seeds for reproducibility.
+- evaluation of the quantum geometric tensor,
+- explicit construction of configuration families,
+- fixed random seeds to ensure reproducibility.
 
-The main experiment is executed using the script:
+## Execution
+
+The main experiment is implemented in:
 
 favo_final_experiment.py
 
-To reproduce the results, run:
+To reproduce the reported results, execute:
 
 python favo_final_experiment.py --seeds 0 1 2 3 4 5 6 7 8 9 --variability-levels 0.00 0.01 0.02 0.05
 
-The outputs include:
-- run-level results,
-- aggregated summaries,
-- paired comparisons,
-- variability sweep statistics,
-- figure generation outputs.
+## Outputs
 
-All simulations are deterministic under fixed seeds and configuration parameters.
+The execution produces:
+
+- run-level experiment data,
+- aggregated performance summaries,
+- paired method comparisons,
+- variability sweep statistics,
+- figures corresponding to the reported results.
+
+All outputs are deterministically generated under fixed seeds and configuration parameters.
